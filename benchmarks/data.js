@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1611759847771,
+  "lastUpdate": 1611759854855,
   "repoUrl": "https://github.com/mariojonke/opentelemetry-python",
   "entries": {
     "OpenTelemetry Python Benchmarks - Python 3.7 - propagator": [
@@ -558,6 +558,46 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.00001854935499749932",
             "extra": "mean: 79.2751829710317 usec\nrounds: 7728"
+          }
+        ]
+      }
+    ],
+    "OpenTelemetry Python Benchmarks - Python 3.5 - core": [
+      {
+        "commit": {
+          "author": {
+            "email": "lechen@microsoft.com",
+            "name": "Leighton Chen",
+            "username": "lzchen"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "ad894b19f531706645491869151f63a4138cf768",
+          "message": "Update some docs (#1553)",
+          "timestamp": "2021-01-26T15:55:29-08:00",
+          "tree_id": "b709949515ffab36df095f7149f9310176d326d8",
+          "url": "https://github.com/mariojonke/opentelemetry-python/commit/ad894b19f531706645491869151f63a4138cf768"
+        },
+        "date": 1611759842509,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "opentelemetry-sdk/tests/performance/benchmarks/trace/test_benchmark_trace.py::test_simple_start_span",
+            "value": 20476.068749651717,
+            "unit": "iter/sec",
+            "range": "stddev: 0.000004393641738207176",
+            "extra": "mean: 48.837499630734015 usec\nrounds: 1355"
+          },
+          {
+            "name": "opentelemetry-sdk/tests/performance/benchmarks/trace/test_benchmark_trace.py::test_simple_start_as_current_span",
+            "value": 13443.217972661456,
+            "unit": "iter/sec",
+            "range": "stddev: 0.0000036982455754355205",
+            "extra": "mean: 74.3869512518231 usec\nrounds: 5272"
           }
         ]
       }
