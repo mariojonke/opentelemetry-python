@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1618306529390,
+  "lastUpdate": 1618306540580,
   "repoUrl": "https://github.com/mariojonke/opentelemetry-python",
   "entries": {
     "OpenTelemetry Python Benchmarks - Python 3.7 - propagator": [
@@ -664,6 +664,44 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.0013059540589866413",
             "extra": "mean: 317.4988042057481 usec\nrounds: 4898"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "christian.neumueller@dynatrace.com",
+            "name": "Christian Neumüller",
+            "username": "Oberon00"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "6f8c077fa5349d445358b879fc83c139a0c22cff",
+          "message": "Fix eachdist.py not printing invoked commands. (#1758)\n\nI observed the following pattern:\r\n```\r\n<output of cmd 1>\r\n<output of cmd 2>\r\n>>> cmd1\r\n>>> cmd2\r\n```\r\n\r\nThe `>>> cmd` header should come immediately before the command output to facilitate debugging & progress reporting.",
+          "timestamp": "2021-04-09T11:23:24-07:00",
+          "tree_id": "47c994ef4364361ef05e198b2fa6822b4c8f6f37",
+          "url": "https://github.com/mariojonke/opentelemetry-python/commit/6f8c077fa5349d445358b879fc83c139a0c22cff"
+        },
+        "date": 1618306535796,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "exporter/opentelemetry-exporter-otlp-proto-grpc/tests/performance/benchmarks/test_benchmark_trace_exporter.py::test_simple_span_processor",
+            "value": 2759.385059919386,
+            "unit": "iter/sec",
+            "range": "stddev: 0.00001838602211997651",
+            "extra": "mean: 362.39958479343744 usec\nrounds: 171"
+          },
+          {
+            "name": "exporter/opentelemetry-exporter-otlp-proto-grpc/tests/performance/benchmarks/test_benchmark_trace_exporter.py::test_batch_span_processor",
+            "value": 3838.836942073854,
+            "unit": "iter/sec",
+            "range": "stddev: 0.000934309423571809",
+            "extra": "mean: 260.4955654771234 usec\nrounds: 5353"
           }
         ]
       }
