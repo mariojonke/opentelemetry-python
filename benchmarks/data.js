@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1620018581518,
+  "lastUpdate": 1620018585771,
   "repoUrl": "https://github.com/mariojonke/opentelemetry-python",
   "entries": {
     "OpenTelemetry Python Benchmarks - Python 3.7 - propagator": [
@@ -1006,6 +1006,44 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.000934309423571809",
             "extra": "mean: 260.4955654771234 usec\nrounds: 5353"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "way@whoop.com",
+            "name": "Marcus Way",
+            "username": "marcusway"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "300ce1bc601440e5560523296b426592f54bf7c5",
+          "message": "Update example collector-config.yaml (#1805)\n\nIt seems that there have been some changes to the open-telemetry collector image that cause issues in running this example. I updated the config file to avoid these, but an alternative would be to pin the image to a specific version rather than using the `latest` tag.\r\n\r\nAnyway, the issues I ran into running the image with the given yaml file were:\r\n\r\n1.  Empty configuration for the OLTP receiver\r\n```Error: cannot load configuration: error reading receivers configuration for otlp: empty config for OTLP receiver```, which is fixed by adding the \r\n```protocols:\r\n    grpc:\r\n    http:\r\n```\r\nbit.\r\n\r\n2.  `unknown processors type \"queued_retry\" for queued_retry`. It looks like this processor was [removed](https://github.com/open-telemetry/opentelemetry-operator/issues/18) from the collector, so I just dropped the references to it.",
+          "timestamp": "2021-05-02T15:28:39-07:00",
+          "tree_id": "6a947f2bae4d0864fbafa8aeb36a84e73a67fd80",
+          "url": "https://github.com/mariojonke/opentelemetry-python/commit/300ce1bc601440e5560523296b426592f54bf7c5"
+        },
+        "date": 1620018576555,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "exporter/opentelemetry-exporter-otlp-proto-grpc/tests/performance/benchmarks/test_benchmark_trace_exporter.py::test_simple_span_processor",
+            "value": 2363.161557715824,
+            "unit": "iter/sec",
+            "range": "stddev: 0.00012382694250124825",
+            "extra": "mean: 423.1619276028577 usec\nrounds: 221"
+          },
+          {
+            "name": "exporter/opentelemetry-exporter-otlp-proto-grpc/tests/performance/benchmarks/test_benchmark_trace_exporter.py::test_batch_span_processor",
+            "value": 3526.557841075613,
+            "unit": "iter/sec",
+            "range": "stddev: 0.000908826768454932",
+            "extra": "mean: 283.56262538855634 usec\nrounds: 6444"
           }
         ]
       }
